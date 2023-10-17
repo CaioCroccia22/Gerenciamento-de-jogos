@@ -10,3 +10,28 @@
 #esse indice para remover o jogador cadastrado no time
 #6 - A opção de listar os jogadores de um time deve ser informado o indice de um time
 # e listar os jogadores que foram associados a ele.
+
+Teams = {}
+
+done = False
+
+def plusTeam():
+    Team = {}
+    name = input("Digite o nome do time:\n")
+    players = input("Digite o números de jogadores\n")
+    Team["name"] = name
+    Team["players"] = players
+    print(Team)
+
+while done == False:
+    print("Escolha umas das opções a seguir:\n")
+    print("1 - Voce deseja adicionar algum time? \n")
+    print("2 - Voce deseja remover algum time? \n")
+    print("3 - Voce deseja listar os time? \n")
+    print("4 - Voce deseja adicionar jogador do time? \n")
+    print("6 - Voce deseja remover jogador do time? \n")
+    print("7 - Voce deseja remover jogador do time? \n")
+    number = int(input("Digite qual opção você deseja:\n"))
+    if number == 1:
+        plusTeam()
+        done == True
