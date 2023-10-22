@@ -12,16 +12,22 @@
 # e listar os jogadores que foram associados a ele.
 
 Teams = {}
+Team = {}
 
 done = False
 
 def plusTeam():
-    Team = {}
     name = input("Digite o nome do time:\n")
     players = input("Digite o números de jogadores\n")
     Team["name"] = name
     Team["players"] = players
     print(Team)
+    Teams["Team"] = Team
+
+
+def listTeam():
+    
+
 
 while done == False:
     print("Escolha umas das opções a seguir:\n")
