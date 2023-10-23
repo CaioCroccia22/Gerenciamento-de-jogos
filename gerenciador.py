@@ -35,7 +35,8 @@ def listPlayers(team):
     for i, players in enumerate(team['players']):
         print(f"{i+1}.{players}")
 
-
+def removeTeam():
+    
 
 while done == False:
     print("Escolha umas das opções a seguir:\n")
