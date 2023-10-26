@@ -78,7 +78,14 @@ while done == False:
         team_num = int(input("Digite o número do time que deseja remover o jogador: \n"))
         if team_num <= len(teams):
             team_name = list(teams.keys())[team_num - 1]
-            del teams[team_name]['players']
+            listPlayers(teams[team_name])
+            player_num = int(input("Informe o número do jogador que deseja remover"))
+            if player_num <= len(teams[team_name]['players']):
+                del teams[team_name]['players'][player_num - 1]
+            else:
+                print("número do jogador inválido")
+        else:
+            print("número do time inválido")
 
     elif choices == "6":
         team_num = int(input("Digite o número do time que deseja listar os jogadores: \n"))
