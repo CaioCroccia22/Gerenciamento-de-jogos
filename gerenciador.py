@@ -68,19 +68,26 @@ while done == False:
             #armazena na variavel o time desejado pelo usuario por meio do indice
             team_name = list(teams.keys())[team_num - 1]
             players_name = input("Digite o nome do jogador: \n")
-            teams[team_name]["players"].append(players_name)
+            teams[team_name]['players'].append(players_name)
             print("Jogador adicionado no time")
         else:
             print("Time inválido!!")
 
     elif choices == "5":
-        pass
+        listTeam()
+        team_num = int(input("Digite o número do time que deseja remover o jogador: \n"))
+        if team_num <= len(teams):
+            team_name = list(teams.keys())[team_num - 1]
+            del teams[team_name]['players']
+
     elif choices == "6":
-        team_num = int(input("Digite o número do time que deseja remover: \n"))
+        team_num = int(input("Digite o número do time que deseja listar os jogadores: \n"))
         if team_num <= len(teams):
             team_name = list(teams.keys())[team_num - 1]
             #É passado como parametro na função o dicionário e o subdicionário
             listPlayers(teams[team_name])
+        else:
+            print("número de time inválido")
     elif choices == "7":
         done = True
     else:
