@@ -35,9 +35,6 @@ def listPlayers(team):
     for i, players in enumerate(team['players']):
         print(f"{i+1}.{players}")
 
-def addPlayer():
-    print("Digite o nome do time, que deseja adicionar o jogador: \n")
-
 
 while done == False:
     print("Escolha umas das opções a seguir:\n")
@@ -70,14 +67,20 @@ while done == False:
         if team_num <= len(teams):
             #armazena na variavel o time desejado pelo usuario por meio do indice
             team_name = list(teams.keys())[team_num - 1]
-            team[team_name]
-            
-            # player_name = input("Qual o nome do jogador? \n")
-            # teams[team_name]['pla']
+            players_name = input("Digite o nome do jogador: \n")
+            teams[team_name]["players"].append(players_name)
+            print("Jogador adicionado no time")
+        else:
+            print("Time inválido!!")
+
     elif choices == "5":
         pass
     elif choices == "6":
-        pass
+        team_num = int(input("Digite o número do time que deseja remover: \n"))
+        if team_num <= len(teams):
+            team_name = list(teams.keys())[team_num - 1]
+            #É passado como parametro na função o dicionário e o subdicionário
+            listPlayers(teams[team_name])
     elif choices == "7":
         done = True
     else:
