@@ -35,8 +35,6 @@ def listPlayers(team):
     for i, players in enumerate(team['players']):
         print(f"{i+1}.{players}")
 
-def removeTeam():
-    
 
 while done == False:
     print("Escolha umas das opções a seguir:\n")
@@ -57,7 +55,10 @@ while done == False:
         team_num = int(input("Digite o número do time que deseja remover: \n"))
         if team_num <= len(teams):
             team_name = list(teams.keys()[team_num - 1])
-
+            del teams[team_name]
+            print("Time já foi removido")
+        else:
+            print("número inválido")
     elif choices == "3":
         pass
     elif choices == "4":
